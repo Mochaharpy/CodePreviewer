@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor with Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <button id="newFileBtn">New File</button>
+            <div id="fileTabs" class="file-tabs"></div>
+        </div>
+        <div class="editor-container">
+            <div class="editor">
+                <div class="line-numbers" id="lineNumbers"></div>
+                <textarea id="codeEditor" placeholder="Write your code here..."></textarea>
+            </div>
+            <div id="resizer" class="resizer"></div>
+            <div class="preview-container">
+                <iframe id="preview" title="Live Preview"></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="contextMenu" class="context-menu">
+        <button id="renameFileBtn">Rename</button>
+        <button id="deleteFileBtn">Delete</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

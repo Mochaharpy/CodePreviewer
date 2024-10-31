@@ -1,0 +1,130 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  width: 200px;
+  background: #f4f4f4;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: #0056b3;
+}
+
+.file-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-tab {
+  padding: 10px;
+  background: #e9ecef;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.file-tab.active {
+  background: #007BFF;
+  color: white;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: row; /* Stack editor and preview vertically */
+  flex-grow: 1;
+  position: relative; /* Needed for positioning the resizer */
+}
+
+.editor {
+  display: flex;
+  flex-grow: 1; /* Allow the editor to grow */
+}
+
+.line-numbers {
+  background: #f0f0f0;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  text-align: right;
+  user-select: none; /* Prevent text selection */
+  min-width: 40px; /* Minimum width for line numbers */
+  overflow: hidden; /* Prevent overflow */
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 10px;
+  resize: none; /* Prevent default resizing */
+  outline: none; /* Remove outline on focus */
+}
+
+.preview-container {
+  height: 100%; /* Adjust as needed */
+  position: relative; /* Needed for absolute positioning of the resizer */
+}
+
+iframe {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 100%; /* Set to 100% to take full height of the container */
+}
+
+.resizer {
+  width: 5px; /* Width of the resizer */
+  cursor: ns-resize; /* Change cursor style to indicate resizing */
+  background-color: #ccc; /* Color of the resizer */
+  position: absolute;
+  left: 0; /* Position it to the left of the preview */
+  top: 50%; /* Align with the middle of the editor */
+  height: 5px; /* Height of the resizer */
+}
+
+/* Context menu styles */
+.context-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.context-menu button {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.context-menu button:hover {
+  background: #f0f0f0;
+}
